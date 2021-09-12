@@ -1,0 +1,106 @@
+@font-face {
+    font-family: "Fira Sans";
+    src: url("../fonts/FiraSans-Regular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+  padding: 0px;
+  margin: 0px;
+  width: 1920px;
+  height: 1080px;
+
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  background-color: #AB7038;
+  width: 1920px;
+  height: 1080px;
+  font-family: "Fira Sans" !important;
+}
+
+#player-container {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.player-cell {
+  width: 1600px;
+  height: 950px;
+  vertical-align:top;
+}
+
+.description-cell {
+  width: 320px;
+  height: 950px;
+  vertical-align:top;
+}
+
+.logo-cell {
+  width: 1900px;
+  height: 130px;
+}
+
+.player {
+  padding: 0;
+  margin: 0;
+  width: 1600px;
+  max-width: 1600px;
+  height: 950px;
+  max-height: 950px;
+}
+
+.video {
+}
+
+.vjs-big-play-button {
+  margin-left: 750px;
+  margin-top: 400px;
+}
+
+.description {
+  width: 320px;
+  padding: 15px;
+}
+
+.player-topic {
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.player-title {
+  font-style: italic;
+  font-size: larger;
+  margin-bottom: 12px;
+  font-variant: small-caps;
+}
+
+.player-description {
+  font-size: smaller;
+  margin-right: 30px;
+}
+
+.player-duration {
+  font-weight: bold;
+}
+
+.logo-cell img {
+  height: 105px;
+}
+
+
+.vjs-volume-panel {
+  display:none !important;
+}
+
+.vjs-poster {
+  background-color: #AB7038 !important;
+}
