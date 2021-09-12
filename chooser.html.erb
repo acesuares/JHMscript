@@ -26,7 +26,7 @@
       <% @topics.each do |topic| %>
         <h1><%= topic["name"] %></h1>
         <div class="scrollList">
-          <% topic["movies"].each do |movie| %>
+          <% topic["tv_movies"].each do |movie| %>
             <div class="displayCard">
               <a class="hoverontouch" href="player-<%= movie["id"] %>.html">
                 <div class="displayCard-thumbnail">
