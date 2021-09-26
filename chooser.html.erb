@@ -30,11 +30,12 @@
             <div class="displayCard">
               <a class="hoverontouch" href="player-<%= movie["id"] %>.html">
                 <div class="displayCard-thumbnail">
-                  <img class="shadow lazy touchy_image" src="thumbnails/<%= "#{movie['id']}.png" %>"/>
+                  <img class="shadow lazy touchy_image" src="thumbnails/<%= "#{movie['id']}_palm.png" %>"/>
                   <div class="card-title touchy_text">
                     <span class='name'><%= movie["title_nl"] %></span><br />
-                    <span class='description'><%= movie["short_description_nl"] %></span>
-                    <span class='duration'></span>
+                    <span class='description'><%= movie["short_description_nl"] %></span><br />
+                    <span class='language'><%= movie["spoken_language"] %>(<%= movie["subtitle_language"] %>)</span><br />
+                    <span class='duration'><%= movie["duration"] %></span>
                   </div>
                 </div>
               </a>

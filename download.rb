@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 #encoding: utf-8
 require "down"
 require "erb"
@@ -46,8 +47,14 @@ IO.write(base_dir + "html/chooser.html", ERB.new(chooser_template).result(bindin
             destination: base_dir + "html/videos/#{movie['id']}.mp4")
   end
 
-  thumbnail_url = movie["thumbnail"]["url"]
+  thumbnail_url = movie["thumbnail"]["palm"]["url"]
   puts "  download #{base_url}#{thumbnail_url}"
   Down.download("#{base_url}#{thumbnail_url}",
-          destination: base_dir + "html/thumbnails/#{movie['id']}.png")
+          destination: base_dir + "html/thumbnails/#{movie['id']}_palm.png")
+
+  thumbnail_url = movie["thumbnail"]["large"]["url"]
+  puts "  download #{base_url}#{thumbnail_url}"
+  Down.download("#{base_url}#{thumbnail_url}",
+          destination: base_dir + "html/thumbnails/#{movie['id']}_large.png")
+
 end

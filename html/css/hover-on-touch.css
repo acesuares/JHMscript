@@ -125,6 +125,10 @@ h1 {
   font-size: small;
 }
 
+.touchy_text .language {
+  font-size: small;
+}
+
 .hoverontouch--aktiv .touchy_image {
   opacity: 0.0;
 }
