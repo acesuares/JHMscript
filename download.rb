@@ -6,7 +6,16 @@ require "httparty"
 require "json"
 require 'open-uri'
 
-base_dir = "/media/pi/CA3A9E753A9E5DEF/"
+# get the basedir
+
+# get the mounted disk
+mounted_disk = `df -hT|grep media/pi`
+if mounted_disk.empty?
+  puts "ERROR: no disk mounted!"
+  exit
+end
+
+base_dir = mounted_disk.split.last + "/"
 
 puts "making the dirs..."
 %w(html html/videos html/thumbnails).each do |dir|
