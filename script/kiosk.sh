@@ -1,6 +1,6 @@
 #!/bin/sh
 
-### start kiosk
+### start kiosk on Raspberry Pi
 
 xset -dpms     # disable DPMS (Energy Star) features.
 xset s off     # disable screen saver

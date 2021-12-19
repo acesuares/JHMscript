@@ -11,6 +11,8 @@
 /log/*.log
 /tmp
 
-# ignore videos& thumbnails
+# ignore videos, thumbnails, and chooser and player html
 /html/videos
 /html/thumbnails
+/html/chooser.html
+/html/player*

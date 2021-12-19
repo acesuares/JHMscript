@@ -4,18 +4,21 @@ require "down"
 require "erb"
 require "httparty"
 require "json"
-require 'open-uri'
+require "open-uri"
 
 # get the basedir
 
-# get the mounted disk
-mounted_disk = `df -hT|grep media/pi`
-if mounted_disk.empty?
-  puts "ERROR: no disk mounted!"
-  exit
-end
+### THIS WORKS BUT NOT USING IT
+# # get the mounted disk
+# mounted_disk = `df -hT|grep media/pi`
+# if mounted_disk.empty?
+#   puts "ERROR: no disk mounted!"
+#   exit
+# end
+#
+# base_dir = mounted_disk.split.last + "/"
 
-base_dir = mounted_disk.split.last + "/"
+base_dir = "/var/www/"
 
 puts "making the dirs..."
 %w(html html/videos html/thumbnails).each do |dir|
