@@ -54,6 +54,6 @@ mount -a
 /usr/bin/ruby $BASEDIR/script/download.rb
 
 # reboot
-reboot
+#reboot
 
 ### END
