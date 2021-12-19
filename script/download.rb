@@ -7,21 +7,14 @@ require "json"
 require "open-uri"
 
 # get the basedir
+BASEDIR  = '/home/pi/JHMscript'
+base_dir = '/var/www/'
 
-### THIS WORKS BUT NOT USING IT
-# # get the mounted disk
-# mounted_disk = `df -hT|grep media/pi`
-# if mounted_disk.empty?
-#   puts "ERROR: no disk mounted!"
-#   exit
-# end
-#
-# base_dir = mounted_disk.split.last + "/"
-
-base_dir = "/var/www/"
+# copy html to base_dir
+cp -r $BASEDIR/html $base_dir
 
 puts "making the dirs..."
-%w(html html/videos html/thumbnails).each do |dir|
+%w(html/videos html/thumbnails).each do |dir|
   puts "  #{dir}"
   Dir.mkdir(base_dir + dir) unless File.exists?(base_dir + dir)
 end
