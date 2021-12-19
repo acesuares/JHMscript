@@ -11,11 +11,11 @@ if [ $EUID -ne 0 ]; then
 fi
 
 # needed packages
-apt install joe mc # for my convenience
-apt install git # we need git
+apt install -y joe mc # for my convenience
+apt install -y git # we need git
 
 # ruby & gems
-apt install ruby # we need ruby
+apt install -y ruby # we need ruby
 gem install down # we need the down gem
 gem install httparty # we need the httparty gem
 
@@ -51,7 +51,7 @@ mount -a
 
 # download for the first time
 
-/usr/bin/ruby $BASEDIR/download.rb
+/usr/bin/ruby $BASEDIR/script/download.rb
 
 # reboot
 reboot
