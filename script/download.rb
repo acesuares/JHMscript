@@ -42,10 +42,27 @@ IO.write(base_dir + "html/chooser.html", ERB.new(chooser_template).result(bindin
   movie_url = movie["movie"]["url"]
   if File.exist?(base_dir + "html/videos/#{movie['id']}.mp4")
     puts "  already downloaded #{base_url}#{movie_url}"
+    if File.exist?(base_dir + "html/videos/#{movie['id']}.mp4.digest")
+      puts "  there is a digest file for this movie"
+    else
+      puts "  creating a digest file for this movie"
+      digest_command = "md5sum " + base_dir + "html/videos/#{movie['id']}.mp4" +
+                          " > " + base_dir + "html/videos/#{movie['id']}.mp4.digest"
+      system(digest_command)
+    end
+  end
+
+  if File.exist?(base_dir + "html/videos/#{movie['id']}.mp4") &&
+      movie['digest'] == File.read(base_dir + "html/videos/#{movie['id']}.mp4.digest")
+      puts "  the digest is the same, so not downloading again"
   else
     puts "  download #{base_url}#{movie_url}"
     Down.download("#{base_url}#{movie_url}",
             destination: base_dir + "html/videos/#{movie['id']}.mp4")
+    puts "  creating a digest file for this movie"
+    digest_command = "md5sum " + base_dir + "html/videos/#{movie['id']}.mp4" +
+                        " > " + base_dir + "html/videos/#{movie['id']}.mp4.digest"
+    system(digest_command)
   end
 
   thumbnail_url = movie["thumbnail"]["palm"]["url"]
