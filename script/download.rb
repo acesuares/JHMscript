@@ -7,11 +7,7 @@ require "json"
 require "open-uri"
 
 # get the basedir
-BASEDIR  = '/home/pi/JHMscript'
 base_dir = '/var/www/'
-
-# copy html to base_dir
-cp -r $BASEDIR/html $base_dir
 
 puts "making the dirs..."
 %w(html/videos html/thumbnails).each do |dir|

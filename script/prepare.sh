@@ -49,8 +49,12 @@ fi
 umount /media/*
 mount -a
 
-# download for the first time
+# copy html source
+BASEDIR  = '/home/pi/JHMscript'
+# copy html to base_dir
+cp -vr $BASEDIR/html /var/www
 
+# download for the first time
 /usr/bin/ruby $BASEDIR/script/download.rb
 
 # reboot
