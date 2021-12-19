@@ -53,7 +53,7 @@ IO.write(base_dir + "html/chooser.html", ERB.new(chooser_template).result(bindin
   end
 
   if File.exist?(base_dir + "html/videos/#{movie['id']}.mp4") &&
-      movie['digest'] == File.read(base_dir + "html/videos/#{movie['id']}.mp4.digest")
+      movie['digest'] == File.read(base_dir + "html/videos/#{movie['id']}.mp4.digest").split(' ').first
       puts "  the digest is the same, so not downloading again"
   else
     puts "  download #{base_url}#{movie_url}"
